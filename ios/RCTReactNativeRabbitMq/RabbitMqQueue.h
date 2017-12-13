@@ -8,6 +8,7 @@
 #endif
 
 #import <RMQClient/RMQClient.h>
+//#import "../../../ios/Pods/RMQClient/RMQClient/RMQClient.h"
 
 @interface RabbitMqQueue : NSObject <RCTBridgeModule>
 

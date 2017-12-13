@@ -1,4 +1,5 @@
 #import "RabbitMqConnection.h"
+#import "GZIP.h"
 
 @interface RabbitMqConnection ()
     @property (nonatomic, readwrite) NSDictionary *config;
@@ -187,7 +188,8 @@ RCT_EXPORT_METHOD(publishToExchange:(NSString *)message exchange_name:(NSString 
             [properties addObject:[[RMQBasicReplyTo alloc] init:[[message_properties objectForKey:@"reply_to"] stringValue]]];
         }
 
-        [exchange_id publish:data routingKey:routing_key properties:properties options:RMQBasicPublishNoOptions];
+        [exchange_id publish:[GZip compress:data] routingKey:routing_key properties:properties options:RMQBasicPublishNoOptions];
+//        [exchange_id publish:data routingKey:routing_key properties:properties options:RMQBasicPublishNoOptions];
     }
 }
 

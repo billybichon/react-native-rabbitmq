@@ -1,4 +1,5 @@
 #import "RabbitMqQueue.h"
+#import "GZIP.h"
 
 @interface RabbitMqQueue ()
     @property (nonatomic, readwrite) NSString *name;
@@ -64,7 +65,9 @@ RCT_EXPORT_MODULE();
                     arguments:arguments
                     handler:^(RMQMessage * _Nonnull message) {
 
-            NSString *body = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+            NSData *uncompressed = [GZip decompress:message.body];
+            NSString *body = [[NSString alloc] initWithData:uncompressed encoding:NSUTF8StringEncoding];
+//            NSString *body = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
 
             [self.channel ack:message.deliveryTag];
 

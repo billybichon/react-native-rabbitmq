@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		317AB6E81FDFF1AF004FD905 /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 317AB6E71FDFF1AF004FD905 /* GZIP.m */; };
+		319A88551FDEC5FD004FA836 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 319A88511FDEC5F5004FA836 /* libRNDeviceInfo.a */; };
 		5D72D2EC1C16249000E22EC1 /* RCTReactNativeRabbitMq.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5D72D2EB1C16249000E22EC1 /* RCTReactNativeRabbitMq.h */; };
 		5D72D2EE1C16249000E22EC1 /* RCTReactNativeRabbitMq.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72D2ED1C16249000E22EC1 /* RCTReactNativeRabbitMq.m */; };
 		E82757861DD4899200DEF92C /* RabbitMqConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E82757851DD4899200DEF92C /* RabbitMqConnection.m */; };
 		E82757A61DD4CEDF00DEF92C /* RabbitMqQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E82757A51DD4CEDF00DEF92C /* RabbitMqQueue.m */; };
 		E84EF0841DDB5832000F141B /* RabbitMqDelegateLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E84EF0831DDB5832000F141B /* RabbitMqDelegateLogger.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		319A88501FDEC5F5004FA836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319A884B1FDEC5F5004FA836 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		319A88521FDEC5F5004FA836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319A884B1FDEC5F5004FA836 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
+			remoteInfo = "RNDeviceInfo-tvOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5D72D2E61C16249000E22EC1 /* CopyFiles */ = {
@@ -28,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		313567B01FDEE526003C242D /* GZIP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZIP.h; sourceTree = "<group>"; };
+		317AB6E71FDFF1AF004FD905 /* GZIP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZIP.m; sourceTree = "<group>"; };
+		319A884B1FDEC5F5004FA836 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		5D72D2E81C16249000E22EC1 /* libRCTReactNativeRabbitMq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTReactNativeRabbitMq.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D72D2EB1C16249000E22EC1 /* RCTReactNativeRabbitMq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTReactNativeRabbitMq.h; sourceTree = "<group>"; };
 		5D72D2ED1C16249000E22EC1 /* RCTReactNativeRabbitMq.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTReactNativeRabbitMq.m; sourceTree = "<group>"; };
@@ -44,17 +66,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319A88551FDEC5FD004FA836 /* libRNDeviceInfo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		319A884C1FDEC5F5004FA836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				319A88511FDEC5F5004FA836 /* libRNDeviceInfo.a */,
+				319A88531FDEC5F5004FA836 /* libRNDeviceInfo-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		319A88541FDEC5FD004FA836 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5D72D2DF1C16249000E22EC1 = {
 			isa = PBXGroup;
 			children = (
+				319A884B1FDEC5F5004FA836 /* RNDeviceInfo.xcodeproj */,
 				5D72D2EA1C16249000E22EC1 /* RCTReactNativeRabbitMq */,
 				5D72D2E91C16249000E22EC1 /* Products */,
+				319A88541FDEC5FD004FA836 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +118,8 @@
 				E82757851DD4899200DEF92C /* RabbitMqConnection.m */,
 				5D72D2EB1C16249000E22EC1 /* RCTReactNativeRabbitMq.h */,
 				5D72D2ED1C16249000E22EC1 /* RCTReactNativeRabbitMq.m */,
+				313567B01FDEE526003C242D /* GZIP.h */,
+				317AB6E71FDFF1AF004FD905 /* GZIP.m */,
 			);
 			path = RCTReactNativeRabbitMq;
 			sourceTree = "<group>";
@@ -125,6 +168,12 @@
 			mainGroup = 5D72D2DF1C16249000E22EC1;
 			productRefGroup = 5D72D2E91C16249000E22EC1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 319A884C1FDEC5F5004FA836 /* Products */;
+					ProjectRef = 319A884B1FDEC5F5004FA836 /* RNDeviceInfo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5D72D2E71C16249000E22EC1 /* RCTReactNativeRabbitMq */,
@@ -132,12 +181,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		319A88511FDEC5F5004FA836 /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = 319A88501FDEC5F5004FA836 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		319A88531FDEC5F5004FA836 /* libRNDeviceInfo-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNDeviceInfo-tvOS.a";
+			remoteRef = 319A88521FDEC5F5004FA836 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D72D2E41C16249000E22EC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E84EF0841DDB5832000F141B /* RabbitMqDelegateLogger.m in Sources */,
+				317AB6E81FDFF1AF004FD905 /* GZIP.m in Sources */,
 				5D72D2EE1C16249000E22EC1 /* RCTReactNativeRabbitMq.m in Sources */,
 				E82757861DD4899200DEF92C /* RabbitMqConnection.m in Sources */,
 				E82757A61DD4CEDF00DEF92C /* RabbitMqQueue.m in Sources */,
@@ -232,10 +299,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../react-native/React/**",
-					"$(SRCROOT)/node_modules/react-native/React",
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../ios/Pods/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -248,10 +312,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-					"$(SRCROOT)/node_modules/react-native/React/**",
-					"$(SRCROOT)/../../../ios/Pods/**",
+					"$(SRCROOT)/../../ios/Pods/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

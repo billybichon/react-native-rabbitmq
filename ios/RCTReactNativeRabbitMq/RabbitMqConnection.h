@@ -9,6 +9,9 @@
 
 #import <RMQClient/RMQClient.h>
 #import <RMQClient/RMQChannel.h>
+//#import "../../../ios/Pods/RMQClient/RMQClient/RMQClient.h"
+//#import "../../../ios/Pods/RMQClient/RMQClient/RMQChannel.h"
+
 #import "RabbitMqQueue.h"
 #import "RabbitMqDelegateLogger.h"
 

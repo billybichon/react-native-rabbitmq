@@ -7,6 +7,7 @@ import java.io.IOException;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableArray;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DefaultConsumer;
@@ -35,7 +36,14 @@ public class RabbitMqConsumer extends DefaultConsumer {
 
         Boolean is_redeliver = envelope.isRedeliver();
 
-        String message = new String(body, "UTF-8");
+//        String message = new String(body, "UTF-8");
+        String message = Gzip.decompress(body);
+
+//        WritableArray writableArray = Arguments.createArray();
+//
+//        for (byte b : body) {
+//            writableArray.pushInt(b);
+//        }
 
         WritableMap message_params = Arguments.createMap();
         message_params.putString("name", "message");

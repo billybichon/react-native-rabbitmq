@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 import com.facebook.react.modules.core.DeviceEventManagerModule;
@@ -13,6 +14,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
@@ -65,7 +67,7 @@ class RabbitMqConnection extends ReactContextBaseJavaModule  {
         this.factory.setHost(this.config.getString("host"));
         this.factory.setPort(this.config.getInt("port"));
         this.factory.setAutomaticRecoveryEnabled(true);
-        this.factory.setRequestedHeartbeat(10);
+        this.factory.setRequestedHeartbeat(60);
 
     }
 
@@ -237,14 +239,13 @@ class RabbitMqConnection extends ReactContextBaseJavaModule  {
     @ReactMethod
     public void publishToExchange(String message, String exchange_name, String routing_key, ReadableMap message_properties) {
 
-         for (RabbitMqExchange exchange : exchanges) {
-		    if (Objects.equals(exchange_name, exchange.name)){
+        for (RabbitMqExchange exchange : exchanges) {
+            if (Objects.equals(exchange_name, exchange.name)){
                 Log.e("RabbitMqConnection", "Exchange publish: " + message);
                 exchange.publish(message, routing_key, message_properties);
                 return;
             }
-		}
-
+        }
     }
 
     @ReactMethod
